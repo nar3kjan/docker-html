@@ -9,7 +9,8 @@ steps:
   - uses: actions/checkout@v3
     name: Check out code
 
-    uses: mr-smithers-excellent/docker-build-push@v5
+  - uses: mr-smithers-excellent/docker-build-push@v5
+    name: Build & push Docker image
     with:
       image: nginx-narek
       registry: [558664324013].dkr.ecr.[us-east-1].amazonaws.com/ubuntu-nginx
