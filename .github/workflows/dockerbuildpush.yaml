@@ -14,8 +14,8 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5 
         with:
-          image: nginx-narek
-          registry: 558664324013.dkr.ecr.us-east-1.amazonaws.com/ubuntu-nginx
+          image: ubuntu-nginx
+          registry: 558664324013.dkr.ecr.us-east-1.amazonaws.com
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
