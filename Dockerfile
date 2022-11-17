@@ -1,7 +1,4 @@
-FROM ubuntu:latest
-
-RUN apt update
-RUN apt install nginx
+FROM nginx:latest
 
 COPY . /var/www/html/
 
