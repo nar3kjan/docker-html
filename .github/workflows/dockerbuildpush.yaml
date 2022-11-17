@@ -16,6 +16,7 @@ jobs:
         with:
           image: ubuntu-nginx
           registry: 558664324013.dkr.ecr.us-east-1.amazonaws.com
+          tags: v1, latest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
