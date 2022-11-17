@@ -1,19 +1,21 @@
 name: Docker Build & Push
 on:
-
   push:
     branches: ["main"]
 
-runs-on: ubuntu-latest
-steps:
-  - uses: actions/checkout@v3
-    name: Check out code
 
-  - uses: mr-smithers-excellent/docker-build-push@v5
-    name: Build & push Docker image
-    with:
-        image: nginx-narek
-        registry: [558664324013].dkr.ecr.[us-east-1].amazonaws.com/ubuntu-nginx
-    env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+jobs:
+  Docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
+        with:
+          image: nginx-narek
+          registry: [558664324013].dkr.ecr.[us-east-1].amazonaws.com/ubuntu-nginx
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
